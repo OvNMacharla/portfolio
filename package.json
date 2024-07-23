@@ -43,8 +43,10 @@
     ]
   },
   "devDependencies": {
+    "@babel/eslint-parser": "^7.24.8",
+    "@babel/preset-env": "^7.24.8",
+    "@babel/preset-react": "^7.24.7",
     "autoprefixer": "^10.4.19",
-    "babel-eslint": "^10.1.0",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
