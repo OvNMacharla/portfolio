@@ -12,7 +12,7 @@ module.exports = {
     jest: true
   },
   parserOptions: {
-    requireConfigFile: false, // This line tells babel-eslint to not require a babel config file
+    requireConfigFile: false,
     babelOptions: {
       presets: ['@babel/preset-env', '@babel/preset-react']
     }
@@ -31,6 +31,12 @@ module.exports = {
     'react/prop-types': 'off',
     'react/jsx-uses-react': 'off',
     'react/react-in-jsx-scope': 'off',
+    'prettier/prettier': ['error', {
+      "semi": true,
+      "singleQuote": true,
+      "trailingComma": "es5",
+      "tabWidth": 2
+    }]
   },
   settings: {
     react: {
