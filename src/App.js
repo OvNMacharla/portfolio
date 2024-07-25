@@ -1,24 +1,26 @@
-import logo from './logo.svg'
-import './App.css'
+import React from 'react'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import About from './components/About/About.tsx'
+import SideNav from './components/SideNav/SideNav.tsx'
+import Layout from './components/Layout.tsx'
+import Contact from './components/Contact/Contact.tsx'
+import Header from './components/Header/Header.tsx'
+import Resume from './components/Resume/Resume.tsx'
+import Portfolio from './components/Portfolio/Portfolio.tsx'
 
 function App() {
-  console.log('ejd')
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="bg-background w-full p-10">
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<About />} />
+            <Route path="contact" element={<Contact />} />
+            <Route path="resume" element={<Resume />} />
+            <Route path="portfolio" element={<Portfolio />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </div>
   )
 }
