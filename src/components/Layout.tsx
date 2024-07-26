@@ -19,7 +19,7 @@ const Layout = () => {
   }, [])
   return (
     <div className="flex">
-      <div style={{ height: contentHeight - 64 }}>
+      <div className="w-fit">
         <SideNav />
       </div>
       <div
