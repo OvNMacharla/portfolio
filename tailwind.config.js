@@ -16,7 +16,7 @@ module.exports = {
         'content-background': '#121112',
         'nav-background': '#242323',
         'border-background': '#171517',
-        'border-color': '#191f29',
+        'border-color': '#535e71',
         'cap-text': '#726868',
       },
     },

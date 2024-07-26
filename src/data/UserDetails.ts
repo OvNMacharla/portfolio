@@ -5,6 +5,7 @@ import {
   EducationDetail,
   ExperienceDetail,
   SkillsDetail,
+  Project,
 } from '../types/UserDetailsType.ts'
 import web from '../assets/icons/web.svg'
 import phoneIcon from '../assets/icons/phone.svg'
@@ -12,7 +13,10 @@ import emailIcon from '../assets/icons/email.svg'
 import mapIcon from '../assets/icons/map.svg'
 import calenderIcon from '../assets/icons/calender.svg'
 import book from '../assets/icons/book.svg'
-
+import flavor from '../assets/flavor-sage.png'
+import todo from '../assets/todo.png'
+import emoji from '../assets/emoji.png'
+import portfolio from '../assets/portfolio.png'
 export const UserDetails: UserDetailsType = {
   email: {
     id: '1',
@@ -141,5 +145,44 @@ export const skillsDetails: SkillsDetail[] = [
     id: '4',
     skill: 'PYTHON',
     percentage: '75%',
+  },
+]
+
+export const projects: Project[] = [
+  {
+    id: '1',
+    title: 'Personal Portfolio',
+    description:
+      'A personal portfolio website built with React and Tailwind CSS to showcase my skills and projects.',
+    techStack: 'React , Tailwind CSS , TypeScript',
+    link: 'https://github.com/OvNMacharla/portfolio',
+    image: portfolio,
+  },
+  {
+    id: '2',
+    title: 'Flavor Sage',
+    description:
+      'A recipe recommender website that suggests recipes based on user preferences and machine learning algorithms.',
+    techStack: 'React JS , Node.js , Gemini',
+    link: 'https://flavor-sage.vercel.app/',
+    image: flavor,
+  },
+  {
+    id: '3',
+    title: 'Todos Application',
+    description:
+      'Developed a persistent todo application with CRUD operations, styled using CSS and Bootstrap, and implemented dynamic UI updates with JavaScript.',
+    techStack: 'HTML , CSS , JavaScript , Bootstrap',
+    link: 'https://ometodoapp.ccbp.tech/',
+    image: todo,
+  },
+  {
+    id: '4',
+    title: 'Emoji Game',
+    description:
+      'A game where users click random emojis; the positions of the emojis change with each click, offering an interactive and engaging experience.',
+    techStack: 'React , CSS',
+    link: 'https://emojiome.ccbp.tech/',
+    image: emoji,
   },
 ]
