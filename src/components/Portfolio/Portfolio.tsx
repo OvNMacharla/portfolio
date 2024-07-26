@@ -8,7 +8,7 @@ const Portfolio = () => {
   }
 
   return (
-    <div className="relative overflow-auto">
+    <div className="relative">
       <span className="text-2xl font-semibold">Projects</span>
       <div className="flex flex-wrap p-5 gap-6">
         {projects.map((detail: Project) => (

@@ -12,7 +12,7 @@ import {
 } from '../../types/UserDetailsType.ts'
 const Resume = () => {
   return (
-    <div className="relative overflow-auto w-full">
+    <div className="relative w-full">
       <p className="text-2xl font-semibold">Resume</p>
       <p className="flex items-center text-xl gap-6 font-medium py-4">
         <span>

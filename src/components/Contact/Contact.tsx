@@ -52,7 +52,7 @@ const Contact = () => {
     }
   }
   return (
-    <div className="relative overflow-auto">
+    <div className="relative">
       <span className="text-2xl font-semibold">Contact</span>
       <MapComponent />
       <p className="text-xl font-semibold my-5">Contact Form</p>
@@ -98,7 +98,7 @@ const Contact = () => {
             </p>
           </div>
 
-          <div className=" border border-border-color rounded-lg p-2 h-fit w-fit shadow-md bg-border-background">
+          <div className="text-button font-semibold border border-border-color rounded-lg p-2 h-fit w-fit shadow-md bg-border-background hover:underline ">
             {result ? (
               result
             ) : (

@@ -1,8 +1,17 @@
 import React from 'react'
-import { workDetails } from '../../data/UserDetails.ts'
-import { WorkDetail } from '../../types/UserDetailsType.ts'
+import {
+  workDetails,
+  certifications,
+  appreciations,
+} from '../../data/UserDetails.ts'
+import {
+  Appreciation,
+  Certification,
+  WorkDetail,
+} from '../../types/UserDetailsType.ts'
+import arrow from '../../assets/icons/arrow-ext.svg'
 const About = () => (
-  <div className="relative overflow-auto">
+  <div className="relative">
     <span className="text-2xl font-semibold">About Me</span>
     <p className="pt-4 text-sm text-cap-text">
       I am Ome Venkata Nagarjuna Macharla, a passionate and experienced software
@@ -31,45 +40,50 @@ const About = () => (
             </span>
             <div>
               <p className="font-bold text-sm">{detail.title}</p>
-              <p className="font-normal text-xs">{detail.description}</p>
+              <p className="text-sm text-cap-text">{detail.description}</p>
             </div>
           </div>
         ))}
       </div>
     </div>
     <div className="pt-5">
-      <span className="text-lg font-semibold">What i&apos;m Doing</span>
+      <span className="text-lg font-semibold">Certifications</span>
       <div className="flex flex-wrap ">
-        {workDetails.map((detail: WorkDetail) => (
+        {certifications.map((detail: Certification) => (
           <div
             key={detail.id}
             className="p-4 w-[47%] flex border border-border-color rounded-lg p-2 shadow-md bg-border-background m-3"
           >
-            <span>
-              <img src={detail.emoji} className="w-10 mr-8" />
-            </span>
             <div>
               <p className="font-bold text-sm">{detail.title}</p>
-              <p className="font-normal text-xs">{detail.description}</p>
+              <p className="text-sm text-cap-text">{detail.issuer}</p>
+              <p className="text-sm text-cap-text">{detail.date}</p>
+              <button
+                type="submit"
+                className="hover:underline cursor-pointer text-sm text-button flex justify-center gap-2 font-semibold pt-2"
+                onClick={() => window.open(detail.link)}
+              >
+                See credential
+                <span>
+                  <img src={arrow} className="text-button" />
+                </span>
+              </button>
             </div>
           </div>
         ))}
       </div>
     </div>
     <div className="pt-5">
-      <span className="text-lg font-semibold">What i&apos;m Doing</span>
+      <span className="text-lg font-semibold">Appreciations</span>
       <div className="flex flex-wrap ">
-        {workDetails.map((detail: WorkDetail) => (
+        {appreciations.map((detail: Appreciation) => (
           <div
             key={detail.id}
             className="p-4 w-[47%] flex border border-border-color rounded-lg p-2 shadow-md bg-border-background m-3"
           >
-            <span>
-              <img src={detail.emoji} className="w-10 mr-8" />
-            </span>
             <div>
               <p className="font-bold text-sm">{detail.title}</p>
-              <p className="font-normal text-xs">{detail.description}</p>
+              <p className="text-sm text-cap-text">{detail.description}</p>
             </div>
           </div>
         ))}

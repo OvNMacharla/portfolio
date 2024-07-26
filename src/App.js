@@ -10,7 +10,7 @@ import Portfolio from './components/Portfolio/Portfolio.tsx'
 
 function App() {
   return (
-    <div className="bg-background w-full p-10">
+    <div className="bg-background p-10 min-h-screen">
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout />}>

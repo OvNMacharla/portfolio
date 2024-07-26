@@ -49,3 +49,19 @@ export interface Project {
   link?: string
   image: string
 }
+
+export interface Certification {
+  id: string
+  title: string
+  issuer: string
+  date: string
+  link?: string
+}
+
+export interface Appreciation {
+  id: string
+  title: string
+  organization: string
+  date: string
+  description: string
+}

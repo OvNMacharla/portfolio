@@ -6,6 +6,8 @@ import {
   ExperienceDetail,
   SkillsDetail,
   Project,
+  Certification,
+  Appreciation,
 } from '../types/UserDetailsType.ts'
 import web from '../assets/icons/web.svg'
 import phoneIcon from '../assets/icons/phone.svg'
@@ -184,5 +186,61 @@ export const projects: Project[] = [
     techStack: 'React , CSS',
     link: 'https://emojiome.ccbp.tech/',
     image: emoji,
+  },
+]
+
+export const certifications: Certification[] = [
+  {
+    id: '1',
+    title: 'Build Your Own Static Website',
+    issuer: 'CCBP 4.0 Academy',
+    date: 'Issued May 2022',
+    link: 'https://certificates.ccbp.in/academy/static-website?id=RGMAOXGDXX',
+  },
+  {
+    id: '2',
+    title: 'Build Your Own Responsive Website',
+    issuer: 'CCBP 4.0 Academy',
+    date: 'Issued May 2022',
+    link: 'https://certificates.ccbp.in/academy/build-your-own-responsive-website?id=OMVIEUOXHI',
+  },
+  {
+    id: '3',
+    title: 'Build Your Own Dynamic Web Application',
+    issuer: 'CCBP 4.0 Academy',
+    date: 'Issued May 2022',
+    link: 'https://certificates.ccbp.in/academy/dynamic-web-application?id=RRMPRQLLSR',
+  },
+  {
+    id: '4',
+    title: 'Programming Foundations with Python',
+    issuer: 'CCBP 4.0 Academy',
+    date: 'Issued Jun 2022',
+    link: 'https://certificates.ccbp.in/academy/programming-foundations-with-python?id=RPGAUUSLIF',
+  },
+  {
+    id: '5',
+    title: 'Node JS',
+    issuer: 'CCBP 4.0 Academy',
+    date: 'Issued Aug 2022',
+    link: 'https://certificates.ccbp.in/academy/node-js?id=OXGISPYRJU',
+  },
+  {
+    id: '6',
+    title: 'Introduction to Databases',
+    issuer: 'CCBP 4.0 Academy',
+    date: 'Issued Dec 2022',
+    link: 'https://certificates.ccbp.in/academy/introduction-to-databases?id=JVTEZRSMYL',
+  },
+]
+
+export const appreciations: Appreciation[] = [
+  {
+    id: '1',
+    title: 'Certificate of Appreciation',
+    organization: 'Tata Consultancy Services',
+    date: 'June 2023',
+    description:
+      'For significant contribution towards AIB Life - Tata Consultancy Services Ltd Partnership and Go-Live of AIB Life operations in May 2023.',
   },
 ]
