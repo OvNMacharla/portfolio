@@ -1,11 +1,12 @@
 // src/components/Layout.tsx
 
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Outlet } from 'react-router-dom'
 import SideNav from './SideNav/SideNav.tsx'
 import Header from './Header/Header.tsx'
 const Layout = () => {
   const [contentHeight, setContentHeight] = useState(window.innerHeight)
+  const sideNavRef = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {
     const handleResize = () => {
@@ -17,13 +18,15 @@ const Layout = () => {
       window.removeEventListener('resize', handleResize)
     }
   }, [])
+  const sideNavHeight = sideNavRef.current?.offsetHeight || 0
+  const height = contentHeight > sideNavHeight ? contentHeight : sideNavHeight
   return (
     <div className="flex">
-      <div className="w-fit">
+      <div ref={sideNavRef} style={{ height: height }}>
         <SideNav />
       </div>
       <div
-        style={{ height: contentHeight - 64 }}
+        style={{ height: height }}
         className="relative ml-10 bg-content-background p-5 rounded-lg overflow-auto scrollbar-thin"
       >
         <Outlet />

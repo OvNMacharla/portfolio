@@ -5,7 +5,6 @@ import { UserDetails } from '../../data/UserDetails.ts'
 import { Detail } from '../../types/UserDetailsType.ts'
 
 const SideNav = () => {
-  console.log(UserDetails)
   return (
     <div className="bg-content-background h-full p-5 rounded-lg">
       <div className="flex flex-col items-center gap-2">
