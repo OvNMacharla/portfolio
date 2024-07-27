@@ -10,8 +10,8 @@ const PersonalDetails = ({ detail }) => (
       <img src={detail.emoji} />
     </div>
     <div className="pl-5 ">
-      <p className="text-xs font-bold text-cap-text">{detail.source}</p>
-      <p className="text-sm">{detail.value}</p>
+      <p className="text-xs font-bold">{detail.source}</p>
+      <p className="text-sm text-cap-text">{detail.value}</p>
     </div>
   </div>
 )

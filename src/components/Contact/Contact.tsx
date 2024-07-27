@@ -1,9 +1,6 @@
 import React, { useState } from 'react'
 import MapComponent from '../Map.tsx'
 import arrow from '../../assets/icons/arrow.svg'
-import mapPin from '../../assets/icons/map-pin.svg'
-import email from '../../assets/icons/email.svg'
-import Popup from '../Popup.tsx'
 
 const Contact = () => {
   const [result, setResult] = useState('')
@@ -53,7 +50,11 @@ const Contact = () => {
   }
   return (
     <div className="relative">
-      <span className="text-2xl font-semibold">Contact</span>
+      <span className="text-4xl font-semibold">Contact</span>
+      <div
+        className="bg-[#fcd303] h-1.5 rounded-full my-5"
+        style={{ width: '5%' }}
+      ></div>
       <MapComponent />
       <p className="text-xl font-semibold my-5">Contact Form</p>
       <form action="" onSubmit={onSubmit} className="m-4 flex gap-5">

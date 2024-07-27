@@ -13,7 +13,11 @@ import {
 const Resume = () => {
   return (
     <div className="relative w-full">
-      <p className="text-2xl font-semibold">Resume</p>
+      <span className="text-4xl font-semibold">Resume</span>
+      <div
+        className="bg-[#fcd303] h-1.5 rounded-full mt-5"
+        style={{ width: '5%' }}
+      ></div>
       <p className="flex items-center text-xl gap-6 font-medium py-4">
         <span>
           <img className="w-5 h-5" src={book} />

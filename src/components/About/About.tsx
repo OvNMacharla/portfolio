@@ -9,10 +9,14 @@ import {
   Certification,
   WorkDetail,
 } from '../../types/UserDetailsType.ts'
-import arrow from '../../assets/icons/arrow-ext.svg'
+
 const About = () => (
   <div className="relative">
-    <span className="text-2xl font-semibold">About Me</span>
+    <span className="text-4xl font-semibold">About Me</span>
+    <div
+      className="bg-[#fcd303] h-1.5 rounded-full mt-5"
+      style={{ width: '5%' }}
+    ></div>
     <p className="pt-4 text-sm text-cap-text">
       I am Ome Venkata Nagarjuna Macharla, a passionate and experienced software
       development engineer with a strong background in web development. I have
@@ -52,22 +56,13 @@ const About = () => (
         {certifications.map((detail: Certification) => (
           <div
             key={detail.id}
-            className="p-4 w-[47%] flex border border-border-color rounded-lg p-2 shadow-md bg-border-background m-3"
+            onClick={() => window.open(detail.link)}
+            className="p-4 w-[47%] flex border border-border-color rounded-lg p-2 shadow-md bg-border-background hover:border-button hover:cursor-pointer m-3"
           >
             <div>
               <p className="font-bold text-sm">{detail.title}</p>
               <p className="text-sm text-cap-text">{detail.issuer}</p>
               <p className="text-sm text-cap-text">{detail.date}</p>
-              <button
-                type="submit"
-                className="hover:underline cursor-pointer text-sm text-button flex justify-center gap-2 font-semibold pt-2"
-                onClick={() => window.open(detail.link)}
-              >
-                See credential
-                <span>
-                  <img src={arrow} className="text-button" />
-                </span>
-              </button>
             </div>
           </div>
         ))}
