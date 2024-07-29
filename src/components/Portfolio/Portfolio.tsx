@@ -19,7 +19,7 @@ const Portfolio = () => {
           <div
             key={detail.id}
             onClick={() => handleClick(detail.link)}
-            className="w-2/5 border brightness-75 border-border-color rounded-lg p-2 shadow-md bg-border-background hover:brightness-100 cursor-pointer hover:w-[41%]"
+            className="md:w-2/5 border brightness-75 border-border-color rounded-lg p-2 shadow-md bg-border-background hover:brightness-100 cursor-pointer hover:w-[41%]"
           >
             <img src={detail.image} />
             <p className="text-base font-semibold pt-3">{detail.title}</p>

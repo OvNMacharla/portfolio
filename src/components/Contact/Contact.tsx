@@ -57,7 +57,7 @@ const Contact = () => {
       ></div>
       <MapComponent />
       <p className="text-xl font-semibold my-5">Contact Form</p>
-      <form action="" onSubmit={onSubmit} className="m-4 flex gap-5">
+      <form action="" onSubmit={onSubmit} className="md:m-4 md:flex gap-5">
         <div>
           <input
             type="email"
@@ -65,7 +65,7 @@ const Contact = () => {
             id="email"
             value={email}
             onChange={handleChange}
-            className="mb-5 bg-transparent border border-gray-300 text-white text-sm rounded-lg block w-[32rem] p-2.5 "
+            className="mb-5 bg-transparent border border-gray-300 text-white text-sm rounded-lg block md:w-[32rem] w-full  p-2.5 "
             placeholder="Email"
             required
           />
@@ -75,20 +75,20 @@ const Contact = () => {
             id="subject"
             value={name}
             onChange={handleName}
-            className="mb-5 bg-transparent border border-gray-300 text-white text-sm rounded-lg block w-[32rem] p-2.5 "
+            className="mb-5 bg-transparent border border-gray-300 text-white text-sm rounded-lg block md:w-[32rem] w-full p-2.5 "
             placeholder="Name"
             required
           />
           <textarea
             name="message"
-            className="bg-transparent border border-gray-300 text-white text-sm rounded-lg block w-[32rem] p-2.5 "
+            className="bg-transparent border border-gray-300 text-white text-sm rounded-lg block md:w-[32rem] w-full p-2.5 "
             rows={4}
             placeholder="Enter your message"
             value={message}
             onChange={handleMessage}
           ></textarea>
         </div>
-        <div className="flex flex-col justify-between">
+        <div className="flex flex-col justify-between pt-5">
           <div>
             <p className="text-xl font-semibold ">Get in Touch</p>
             <p className="pt-2 text-sm text-cap-text">
@@ -99,7 +99,7 @@ const Contact = () => {
             </p>
           </div>
 
-          <div className="text-button font-semibold border border-border-color rounded-lg p-2 h-fit w-fit shadow-md bg-border-background hover:underline ">
+          <div className="mt-5 text-button font-semibold border border-border-color rounded-lg p-2 h-fit w-fit shadow-md bg-border-background hover:underline ">
             {result ? (
               result
             ) : (

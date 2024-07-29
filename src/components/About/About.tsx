@@ -57,7 +57,7 @@ const About = () => (
           <div
             key={detail.id}
             onClick={() => window.open(detail.link)}
-            className="p-4 md:w-[47%] flex border border-border-color rounded-lg p-2 shadow-md bg-border-background hover:border-button hover:cursor-pointer m-3"
+            className="p-4 md:w-[47%] w-screen flex border border-border-color rounded-lg p-2 shadow-md bg-border-background hover:border-button hover:cursor-pointer m-3"
           >
             <div>
               <p className="font-bold text-sm">{detail.title}</p>

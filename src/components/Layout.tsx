@@ -31,10 +31,14 @@ const Layout = () => {
       </div>
       <div
         style={{ height: height }}
-        className="relative md:ml-10 bg-content-background p-5 rounded-lg overflow-auto scrollbar-thin"
+        className="relative md:ml-10 md:mt-0 mt-16 bg-content-background p-5 rounded-lg overflow-auto scrollbar-thin"
       >
+        <span className="md:hidden block">
+          <Header />
+        </span>
+
         <Outlet />
-        <div className="absolute md:block hidden  md:top-0 md:right-0">
+        <div className="absolute md:block hidden md:top-0 md:right-0">
           <Header />
         </div>
       </div>
