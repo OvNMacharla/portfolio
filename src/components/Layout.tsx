@@ -34,7 +34,7 @@ const Layout = () => {
         className="relative md:ml-10 bg-content-background p-5 rounded-lg overflow-auto scrollbar-thin"
       >
         <Outlet />
-        <div className="hidden md:absolute md:top-0 md:right-0">
+        <div className="absolute md:block hidden  md:top-0 md:right-0">
           <Header />
         </div>
       </div>
