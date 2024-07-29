@@ -21,16 +21,20 @@ const Layout = () => {
   const sideNavHeight = sideNavRef.current?.offsetHeight || 0
   const height = contentHeight > sideNavHeight ? contentHeight : sideNavHeight
   return (
-    <div className="flex">
-      <div ref={sideNavRef} style={{ height: height }}>
+    <div className="md:flex ">
+      <div
+        className="md:block hidden"
+        ref={sideNavRef}
+        style={{ height: height }}
+      >
         <SideNav />
       </div>
       <div
         style={{ height: height }}
-        className="relative ml-10 bg-content-background p-5 rounded-lg overflow-auto scrollbar-thin"
+        className="relative md:ml-10 bg-content-background p-5 rounded-lg overflow-auto scrollbar-thin"
       >
         <Outlet />
-        <div className="absolute top-0 right-0">
+        <div className="hidden md:absolute md:top-0 md:right-0">
           <Header />
         </div>
       </div>

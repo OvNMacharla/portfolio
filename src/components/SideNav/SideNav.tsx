@@ -18,7 +18,7 @@ const SideNav = () => {
       </div>
       <hr className="mt-9 mb-9 bg-nav-background" />
       {Object.entries(UserDetails).map(([key, detail]: [string, Detail]) => (
-        <PersonalDetails key={key} detail={detail} />
+        <PersonalDetails key={detail.id} detail={detail} />
       ))}
     </div>
   )

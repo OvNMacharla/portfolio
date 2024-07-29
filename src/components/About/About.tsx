@@ -37,7 +37,7 @@ const About = () => (
         {workDetails.map((detail: WorkDetail) => (
           <div
             key={detail.id}
-            className="p-4 w-[47%] flex border border-border-color rounded-lg p-2 shadow-md bg-border-background m-3"
+            className="p-4 md:w-[47%] flex border border-border-color rounded-lg p-2 shadow-md bg-border-background m-3"
           >
             <span>
               <img src={detail.emoji} className="w-10 mr-8" />
@@ -57,7 +57,7 @@ const About = () => (
           <div
             key={detail.id}
             onClick={() => window.open(detail.link)}
-            className="p-4 w-[47%] flex border border-border-color rounded-lg p-2 shadow-md bg-border-background hover:border-button hover:cursor-pointer m-3"
+            className="p-4 md:w-[47%] flex border border-border-color rounded-lg p-2 shadow-md bg-border-background hover:border-button hover:cursor-pointer m-3"
           >
             <div>
               <p className="font-bold text-sm">{detail.title}</p>
@@ -74,7 +74,7 @@ const About = () => (
         {appreciations.map((detail: Appreciation) => (
           <div
             key={detail.id}
-            className="p-4 w-[47%] flex border border-border-color rounded-lg p-2 shadow-md bg-border-background m-3"
+            className="p-4 md:w-[47%] flex border border-border-color rounded-lg p-2 shadow-md bg-border-background m-3"
           >
             <div>
               <p className="font-bold text-sm">{detail.title}</p>
