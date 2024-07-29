@@ -32,7 +32,7 @@ const Header = () => {
     <>
       <div
         ref={navbarRef}
-        className="md:hidden fixed top-0 left-0 right-0 bg-white border-b border-gray-200 dark:bg-background dark:border-gray-700 z-50"
+        className="md:hidden fixed top-0 left-0 right-0 bg-background border-b border-gray-200 dark:bg-background dark:border-gray-700 z-50"
       >
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-2">
           <a
