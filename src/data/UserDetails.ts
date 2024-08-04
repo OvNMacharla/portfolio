@@ -24,25 +24,25 @@ export const UserDetails: UserDetailsType[] = [
     id: '1',
     source: 'EMAIL',
     value: 'omenagarjuna@gmail.com',
-    emoji: emailIcon,
+    emoji: '',
   },
   {
     id: '2',
     source: 'PHONE',
     value: '+91 9121627633',
-    emoji: phoneIcon,
+    emoji: '',
   },
   {
     id: '3',
     source: 'BIRTHDAY',
     value: 'Nov 03, 2001',
-    emoji: calenderIcon,
+    emoji: '',
   },
   {
     id: '4',
     source: 'LOCATION',
     value: 'Repalle, Andhra Pradesh, INDIA',
-    emoji: mapIcon,
+    emoji: '',
   },
 ]
 
