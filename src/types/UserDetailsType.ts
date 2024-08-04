@@ -1,15 +1,8 @@
-export interface Detail {
+export interface UserDetailsType {
   id: string
+  source: string
   value: string
   emoji: string
-  source: string
-}
-
-export interface UserDetailsType {
-  email: Detail
-  phone: Detail
-  birthday: Detail
-  location: Detail
 }
 
 export interface WorkDetail {

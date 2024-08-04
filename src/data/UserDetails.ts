@@ -19,32 +19,32 @@ import flavor from '../assets/flavor-sage.png'
 import todo from '../assets/todo.png'
 import emoji from '../assets/emoji.png'
 import portfolio from '../assets/portfolio.png'
-export const UserDetails: UserDetailsType = {
-  email: {
+export const UserDetails: UserDetailsType[] = [
+  {
     id: '1',
     source: 'EMAIL',
     value: 'omenagarjuna@gmail.com',
     emoji: emailIcon,
   },
-  phone: {
+  {
     id: '2',
     source: 'PHONE',
     value: '+91 9121627633',
     emoji: phoneIcon,
   },
-  birthday: {
+  {
     id: '3',
     source: 'BIRTHDAY',
     value: 'Nov 03, 2001',
     emoji: calenderIcon,
   },
-  location: {
+  {
     id: '4',
     source: 'LOCATION',
     value: 'Repalle, Andhra Pradesh, INDIA',
     emoji: mapIcon,
   },
-}
+]
 
 export const workDetails: WorkDetail[] = [
   {

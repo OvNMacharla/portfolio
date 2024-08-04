@@ -2,7 +2,7 @@ import React from 'react'
 import Emoji from '../../assets/MyEmoji_20240724_182829_0.png'
 import PersonalDetails from './PersonalDetails.tsx'
 import { UserDetails } from '../../data/UserDetails.ts'
-import { Detail } from '../../types/UserDetailsType.ts'
+import { UserDetailsType } from '../../types/UserDetailsType.ts'
 
 const SideNav = () => {
   return (
@@ -17,8 +17,16 @@ const SideNav = () => {
         </p>
       </div>
       <hr className="mt-9 mb-9 bg-nav-background" />
-      {Object.entries(UserDetails).map(([key, detail]: [string, Detail]) => (
-        <PersonalDetails key={detail.id} detail={detail} />
+      {UserDetails.map((detail: UserDetailsType) => (
+        <div key={detail.id} className="flex m-3">
+          <div className="border border-border-color rounded-lg p-2 h-fit w-fit shadow-md bg-border-background">
+            <img src={detail.emoji} />
+          </div>
+          <div className="pl-5 ">
+            <p className="text-xs font-bold">{detail.source}</p>
+            <p className="text-sm text-cap-text">{detail.value}</p>
+          </div>
+        </div>
       ))}
     </div>
   )
