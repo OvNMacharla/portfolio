@@ -19,6 +19,7 @@ import flavor from '../assets/flavor-sage.png'
 import todo from '../assets/todo.png'
 import emoji from '../assets/emoji.png'
 import portfolio from '../assets/portfolio.png'
+import event from '../assets/event.png'
 export const UserDetails: UserDetailsType[] = [
   {
     id: '1',
@@ -186,6 +187,15 @@ export const projects: Project[] = [
     techStack: 'React , CSS',
     link: 'https://emojiome.ccbp.tech/',
     image: emoji,
+  },
+  {
+    id: '5',
+    title: 'Event Management System',
+    description:
+      'An event management system built using MongoDB, React, Node.js, Express, and GraphQL. The application features authentication and login services, allowing users to create, book, and cancel events.',
+    techStack: 'MongoDB, React, Node.js, Express, GraphQL',
+    link: 'https://github.com/your-repo/event-management-system',
+    image: event,
   },
 ]
 
