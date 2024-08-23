@@ -158,7 +158,7 @@ export const projects: Project[] = [
     description:
       'A personal portfolio website built with React and Tailwind CSS to showcase my skills and projects.',
     techStack: 'React , Tailwind CSS , TypeScript',
-    link: 'https://github.com/OvNMacharla/portfolio',
+    link: 'https://ovn-portfolio.vercel.app/',
     image: portfolio,
   },
   {
@@ -194,7 +194,7 @@ export const projects: Project[] = [
     description:
       'An event management system built using MongoDB, React, Node.js, Express, and GraphQL. The application features authentication and login services, allowing users to create, book, and cancel events.',
     techStack: 'MongoDB, React, Node.js, Express, GraphQL',
-    link: 'https://github.com/your-repo/event-management-system',
+    link: 'https://management-event.vercel.app/',
     image: event,
   },
 ]
