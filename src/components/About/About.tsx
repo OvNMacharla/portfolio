@@ -10,34 +10,18 @@ import {
   WorkDetail,
 } from '../../types/UserDetailsType.ts'
 
+import image from '../../assets/image1.jpg';
 const About = () => (
   <div className="relative">
-    <span className="text-4xl font-semibold">About Me</span>
-    <div
-      className="bg-[#fcd303] h-1.5 rounded-full mt-5"
-      style={{ width: '5%' }}
-    ></div>
-    <p className="pt-4 text-sm text-cap-text">
-      I am Ome Venkata Nagarjuna Macharla, a passionate and experienced software
-      development engineer with a strong background in web development. I have
-      honed my skills in Python, JavaScript, HTML, CSS, NodeJS, Express JS,
-      React JS, and SQLite. I have a proven track record of collaborating with
-      cross-functional teams to develop innovative, user-friendly applications.
-      <br /> <br /> I worked as a Software Development Engineer Intern at
-      Kasspro Enterprises and as a Front End Developer at Tata Consultancy
-      Services, focusing on improving website performance and enhancing user
-      experience. Certified in Full-stack Development by Nxtwave Disruptive
-      Technologies, I also demonstrated leadership as a team lead in the 21st
-      Matri Fest GIET. I aim to continue advancing in the field of web
-      development and creating impactful digital experiences.
-    </p>
-    <div className="pt-5">
-      <span className="text-lg font-semibold">What i&apos;m Doing</span>
+    <div className="pt-5 md:flex">
+      <div>
+        <h1 className="text-[45px] font-[500]">What I&apos;m Doing</h1>
+        <p className='text-[#808080] font-[400]'>Building dynamic and scalable web applications using the MERN stack and Next.js, focusing on creating user-friendly interfaces, seamless API integrations, and efficient server-side solutions.</p></div>
       <div className="flex flex-wrap ">
         {workDetails.map((detail: WorkDetail) => (
           <div
             key={detail.id}
-            className="p-4 md:w-[47%] flex border border-border-color rounded-lg p-2 shadow-md bg-border-background m-3"
+            className="p-4  flex  m-3"
           >
             <span>
               <img src={detail.emoji} className="w-10 mr-8" />
@@ -50,7 +34,24 @@ const About = () => (
         ))}
       </div>
     </div>
-    <div className="pt-5">
+
+
+    <div className='md:flex'>
+      <div>
+        <span className="text-4xl font-semibold">About Me</span>
+        <div
+          className="bg-[#eb4a4a] h-1.5 rounded-full mt-5"
+          style={{ width: '5%' }}
+        ></div>
+        <p className="pt-4 text-[#808080] font-[400]">
+          I am a passionate Full-stack Developer with expertise in the MERN stack and Next.js, dedicated to building dynamic, scalable, and user-friendly web applications. With a strong foundation in both front-end and back-end development, I focus on creating seamless user experiences, efficient API integrations, and optimizing performance. Currently, I am working on innovative projects that combine my skills in React, Node.js, and cloud technologies. Always eager to learn and grow, I aim to contribute to impactful projects and collaborate with teams to solve complex challenges in web development.
+        </p>
+      </div>
+      <img src={image} className='w-[300px]' />
+    </div>
+
+
+    {/* <div className="pt-5">
       <span className="text-lg font-semibold">Certifications</span>
       <div className="flex flex-wrap ">
         {certifications.map((detail: Certification) => (
@@ -83,7 +84,7 @@ const About = () => (
           </div>
         ))}
       </div>
-    </div>
+    </div> */}
   </div>
 )
 

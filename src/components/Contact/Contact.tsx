@@ -52,7 +52,7 @@ const Contact = () => {
     <div className="relative">
       <span className="text-4xl font-semibold">Contact</span>
       <div
-        className="bg-[#fcd303] h-1.5 rounded-full my-5"
+        className="bg-[#eb4a4a] h-1.5 rounded-full my-5"
         style={{ width: '5%' }}
       ></div>
       <MapComponent />
@@ -99,14 +99,11 @@ const Contact = () => {
             </p>
           </div>
 
-          <div className="mt-5 text-button font-semibold border border-border-color rounded-lg p-2 h-fit w-fit shadow-md bg-border-background hover:underline ">
+          <div className="mt-5 text-button font-semibold p-2 h-fit w-fit shadow-md bg-[#eb4a4a] hover:underline ">
             {result ? (
               result
             ) : (
-              <button type="submit" className="text-sm flex gap-2">
-                <span>
-                  <img src={arrow} />
-                </span>
+              <button type="submit" className="text-[#ffffff] text-sm flex gap-2">
                 Send Message
               </button>
             )}

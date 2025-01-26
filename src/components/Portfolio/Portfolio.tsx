@@ -9,11 +9,11 @@ const Portfolio = () => {
 
   return (
     <div className="relative">
-      <span className="text-4xl font-semibold">Projects</span>
+      {/* <span className="text-4xl font-semibold">Projects</span>
       <div
         className="bg-[#fcd303] h-1.5 rounded-full mt-5"
         style={{ width: '5%' }}
-      ></div>
+      ></div> */}
       <div className="flex flex-wrap p-5 gap-6">
         {projects.map((detail: Project) => (
           <div

@@ -2,7 +2,12 @@ import React, { useState, useEffect, useRef } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import Emoji from '../../assets/MyEmoji_20240724_182829_0.png'
 
-const Header = () => {
+interface HeaderProps {
+  onScrollToAbout: () => void;
+  onScrollToContact: () => void;
+}
+
+const Header: React.FC<HeaderProps> = ({ onScrollToAbout, onScrollToContact }) => {
   const [isNavbarOpen, setIsNavbarOpen] = useState(false)
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
   const navbarRef = useRef(null)
@@ -28,6 +33,16 @@ const Header = () => {
       document.removeEventListener('mousedown', handleClickOutside)
     }
   }, [])
+
+  const aboutButton = () => {
+    onScrollToAbout()
+    setIsNavbarOpen(false)
+  }
+
+  const contactButton = () => {
+    onScrollToContact()
+    setIsNavbarOpen(false)
+  }
   return (
     <>
       <div
@@ -77,7 +92,7 @@ const Header = () => {
                   to="/"
                   activeClassName="text-blue-700 dark:text-blue-500"
                   className="block py-2 px-3 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                  onClick={() => setIsNavbarOpen(false)}
+                  onClick={aboutButton}
                 >
                   About
                 </NavLink>
@@ -104,10 +119,10 @@ const Header = () => {
               </li>
               <li>
                 <NavLink
-                  to="/contact"
+                  to="/"
                   activeClassName="text-blue-700 dark:text-blue-500"
                   className="block py-2 px-3 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                  onClick={() => setIsNavbarOpen(false)}
+                  onClick={contactButton}
                 >
                   Contact
                 </NavLink>
@@ -116,8 +131,8 @@ const Header = () => {
           </div>
         </div>
       </div>
-      <div className="w-fit font-semibold bg-nav-background rounded-tr-lg rounded-bl-2xl pt-3 pb-3 pl-9 pr-9 md:flex hidden gap-9">
-        <Link to="/" className="hover:underline">
+      <div className="w-fit font-semibold rounded-tr-lg rounded-bl-2xl pt-3 pb-3 pl-9 pr-9 md:flex hidden gap-9">
+        <Link to="/" className="hover:underline" onClick={() => onScrollToAbout()}>
           About
         </Link>
         <Link to="/resume" className="hover:underline">
@@ -126,7 +141,7 @@ const Header = () => {
         <Link to="/projects" className="hover:underline">
           Projects
         </Link>
-        <Link to="/contact" className="hover:underline">
+        <Link to="/" className="hover:underline" onClick={() => onScrollToContact()}>
           Contact
         </Link>
       </div>

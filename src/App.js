@@ -7,6 +7,7 @@ import Contact from './components/Contact/Contact.tsx'
 import Header from './components/Header/Header.tsx'
 import Resume from './components/Resume/Resume.tsx'
 import Portfolio from './components/Portfolio/Portfolio.tsx'
+import New from './components/New.tsx'
 
 function App() {
   return (
@@ -14,8 +15,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout />}>
-            <Route index element={<About />} />
-            <Route path="contact" element={<Contact />} />
+            <Route index element={<New />} />
             <Route path="resume" element={<Resume />} />
             <Route path="projects" element={<Portfolio />} />
           </Route>
