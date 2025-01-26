@@ -12,7 +12,7 @@ import {
 } from '../../types/UserDetailsType.ts'
 const Resume = () => {
   return (
-    <div className="relative w-full">
+    <div className="relative w-full mt-[77px] md:mt-0">
       {/* <span className="text-4xl font-semibold">Resume</span>
       <div
         className="bg-[#fcd303] h-1.5 rounded-full mt-5"

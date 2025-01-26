@@ -3,11 +3,14 @@ import { Link, NavLink } from 'react-router-dom'
 import Emoji from '../../assets/MyEmoji_20240724_182829_0.png'
 
 interface HeaderProps {
-  onScrollToAbout: () => void;
-  onScrollToContact: () => void;
+  onScrollToAbout: () => void
+  onScrollToContact: () => void
 }
 
-const Header: React.FC<HeaderProps> = ({ onScrollToAbout, onScrollToContact }) => {
+const Header: React.FC<HeaderProps> = ({
+  onScrollToAbout,
+  onScrollToContact,
+}) => {
   const [isNavbarOpen, setIsNavbarOpen] = useState(false)
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
   const navbarRef = useRef(null)
@@ -132,7 +135,11 @@ const Header: React.FC<HeaderProps> = ({ onScrollToAbout, onScrollToContact }) =
         </div>
       </div>
       <div className="w-fit font-semibold rounded-tr-lg rounded-bl-2xl pt-3 pb-3 pl-9 pr-9 md:flex hidden gap-9">
-        <Link to="/" className="hover:underline" onClick={() => onScrollToAbout()}>
+        <Link
+          to="/"
+          className="hover:underline"
+          onClick={() => onScrollToAbout()}
+        >
           About
         </Link>
         <Link to="/resume" className="hover:underline">
@@ -141,7 +148,11 @@ const Header: React.FC<HeaderProps> = ({ onScrollToAbout, onScrollToContact }) =
         <Link to="/projects" className="hover:underline">
           Projects
         </Link>
-        <Link to="/" className="hover:underline" onClick={() => onScrollToContact()}>
+        <Link
+          to="/"
+          className="hover:underline"
+          onClick={() => onScrollToContact()}
+        >
           Contact
         </Link>
       </div>

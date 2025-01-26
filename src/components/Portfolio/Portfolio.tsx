@@ -1,6 +1,7 @@
 import React from 'react'
 import { projects } from '../../data/UserDetails.ts'
 import { Project } from '../../types/UserDetailsType.ts'
+import book from '../../assets/icons/book.svg'
 
 const Portfolio = () => {
   const handleClick = (link) => {
@@ -8,12 +9,13 @@ const Portfolio = () => {
   }
 
   return (
-    <div className="relative">
-      {/* <span className="text-4xl font-semibold">Projects</span>
-      <div
-        className="bg-[#fcd303] h-1.5 rounded-full mt-5"
-        style={{ width: '5%' }}
-      ></div> */}
+    <div className="relative mt-[67px] md:mt-0">
+      <p className="flex items-center text-xl gap-6 font-medium py-4">
+        <span>
+          <img className="w-5 h-5" src={book} />
+        </span>
+        Projects
+      </p>
       <div className="flex flex-wrap p-5 gap-6">
         {projects.map((detail: Project) => (
           <div
