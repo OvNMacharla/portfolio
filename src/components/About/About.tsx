@@ -37,7 +37,7 @@ const About = () => (
       </div>
     </div>
 
-    <div className="md:flex flex items-center flex-col">
+    <div className="flex flex-col md:flex-row items-center">
       <div>
         <span className="text-4xl font-semibold">About Me</span>
         <div
