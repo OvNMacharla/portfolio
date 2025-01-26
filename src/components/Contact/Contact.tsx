@@ -49,7 +49,7 @@ const Contact = () => {
     }
   }
   return (
-    <div className="relative">
+    <div className="relative mt-[77px] md:mt-0">
       <span className="text-4xl font-semibold">Contact</span>
       <div
         className="bg-[#eb4a4a] h-1.5 rounded-full my-5"

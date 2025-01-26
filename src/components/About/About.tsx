@@ -12,7 +12,7 @@ import {
 
 import image from '../../assets/image1.jpg';
 const About = () => (
-  <div className="relative">
+  <div className="relative mt-[77px] md:mt-0">
     <div className="pt-5 md:flex">
       <div>
         <h1 className="text-[45px] font-[500]">What I&apos;m Doing</h1>
