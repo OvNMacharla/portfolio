@@ -56,7 +56,7 @@ const Header: React.FC<HeaderProps> = ({ onScrollToAbout, onScrollToContact }) =
           >
             <img src={Emoji} className="h-12" alt="Logo" />
             <span className="self-center text-normal font-semibold whitespace-nowrap dark:text-white">
-              O V Nagarjuna
+              OvN
             </span>
           </a>
           <button
