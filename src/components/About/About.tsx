@@ -56,7 +56,7 @@ const About = () => (
           teams to solve complex challenges in web development.
         </p>
       </div>
-      <img src={image} className="w-[300px]" />
+      {/* <img src={image} className="w-[300px]" /> */}
     </div>
 
     {/* <div className="pt-5">
