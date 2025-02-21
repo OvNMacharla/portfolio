@@ -52,7 +52,9 @@ const Resume = () => {
                 {detail.title} | {detail.company},{detail.location}
               </p>
               <p className="text-cap-text">{detail.period}</p>
-              <p className="text-sm text-cap-text">{detail.responsibilities}</p>
+              {detail.responsibilities.map((res, index) => (
+                <p className="text-sm text-cap-text pt-2" key={index}>{res}</p>
+              ))}
             </div>
           </div>
         ))}

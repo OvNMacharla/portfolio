@@ -94,26 +94,29 @@ export const educationDetails: EducationDetail[] = [
 export const experienceDetails: ExperienceDetail[] = [
   {
     id: '1',
+    title: 'Full Stack Developer',
+    company: 'Tata Consultancy Services',
+    location: 'Kolkata',
+    period: 'June 2023 - Present',
+    responsibilities: [
+      '•	Designed and developed scalable web applications using Next.js (SSR), React.js, and Node.js, improving application performance by 30% through optimized server-side rendering and API integrations.',
+      '•	Built and deployed REST/GraphQL APIs with 99.9% uptime, reducing average response time by 35% through query optimization and caching strategies.',
+      '•	Automated cloud infrastructure setup using Terraform (IaC) and deployed applications on AWS (EC2, S3, Lambda), cutting deployment time by 40% and ensuring scalability for 10k+ monthly active users.',
+      '•	Developed 15+ reusable React components for enterprise applications, improving UI consistency and reducing development time by 20%.',
+      '•	Integrated 12+ REST APIs for real-time data fetching, enhancing user experience and reducing latency by 30%.',
+      '•	Collaborated with cross-functional teams to optimize API payloads, reducing data transfer size by 45% using gzip compression.',
+      '•	Conducted cross-browser testing and resolved 20+ UI/UX issues, achieving a 95% client satisfaction rate.'
+    ],
+  }, {
+    id: '2',
     title: 'Software Development Engineer Intern',
     company: 'Kasspro Enterprises',
     location: 'Chennai',
     period: 'Dec 2022 - June 2023',
     responsibilities: [
-      'Collaborated with the development, testing, and support teams to ensure the quality of all phases of web development and redesign the UI using HTML, CSS, Jquery, and Java.',
-      'Improved website performance and user experience by implementing responsive design and optimizing page load times.',
-      'Developed new features and resolved bugs using JavaScript and React JS.',
-    ],
-  },
-  {
-    id: '2',
-    title: 'Front End Developer',
-    company: 'Tata Consultancy Services',
-    location: 'Kolkata',
-    period: 'June 2023 - Present',
-    responsibilities: [
-      'Collaborated with cross-functional teams for end-to-end web development quality.',
-      'Enhanced website performance with responsive design, optimizing page load times.',
-      'Implemented new features, API integrations, and bug fixes using JavaScript and React JS.',
+      '•	Debugged and optimized HTML, CSS, JavaScript, and Java code, resolving 15+ critical bugs and improving application performance by 25%.',
+      '•	Documented and tracked 50+ bugs using JIRA, ensuring timely resolution and seamless communication with stakeholders.',
+      '•	Assisted in maintaining product documentation and provided support for additional development tasks, improving team efficiency by 15%.',
     ],
   },
 ]
@@ -121,7 +124,7 @@ export const experienceDetails: ExperienceDetail[] = [
 export const skillsDetails: SkillsDetail[] = [
   {
     id: '1',
-    skill: 'HTML,CSS',
+    skill: 'HTML, CSS, JAVASCRIPT',
     percentage: '90%',
   },
   {
@@ -145,11 +148,66 @@ export const skillsDetails: SkillsDetail[] = [
     percentage: '90%',
   },
   {
-    id: '4',
+    id: '6',
     skill: 'PYTHON',
     percentage: '75%',
   },
-]
+  {
+    id: '7',
+    skill: 'NEXT.JS',
+    percentage: '70%',
+  },
+  {
+    id: '8',
+    skill: 'TYPESCRIPT',
+    percentage: '70%',
+  },
+  {
+    id: '9',
+    skill: 'REST API & GRAPHQL',
+    percentage: '80%',
+  },
+  {
+    id: '10',
+    skill: 'AWS (EC2, S3, LAMBDA)',
+    percentage: '65%',
+  },
+  {
+    id: '11',
+    skill: 'TERRAFORM (IaC)',
+    percentage: '60%',
+  },
+  {
+    id: '12',
+    skill: 'GIT & GITHUB',
+    percentage: '85%',
+  },
+  {
+    id: '13',
+    skill: 'JQUERY',
+    percentage: '70%',
+  },
+  {
+    id: '14',
+    skill: 'RESPONSIVE DESIGN',
+    percentage: '90%',
+  },
+  {
+    id: '15',
+    skill: 'UI/UX DESIGN',
+    percentage: '75%',
+  },
+  {
+    id: '16',
+    skill: 'TESTING & DEBUGGING',
+    percentage: '80%',
+  },
+  {
+    id: '17',
+    skill: 'AGILE METHODOLOGY',
+    percentage: '85%',
+  },
+];
 
 export const projects: Project[] = [
   {
