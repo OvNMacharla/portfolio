@@ -27,10 +27,11 @@ const Header: React.FC<HeaderProps> = ({
   }
 
   const navItems = [
-    { label: 'About', action: onScrollToAbout },
+    { label: 'About', action: onScrollToAbout, to: '/' },
     { label: 'Projects', to: '/projects' },
-    { label: 'Contact', action: onScrollToContact },
+    { label: 'Contact', action: onScrollToContact, to: '/' },
     { label: 'Resume', download: true },
+    { label: 'Exp & Education', to: '/resume' }
   ]
   useEffect(() => {
     document.addEventListener('mousedown', handleClickOutside)
@@ -160,7 +161,10 @@ const Header: React.FC<HeaderProps> = ({
                   {item.to ? (
                     <NavLink
                       to={item.to}
-                      onClick={() => setIsNavbarOpen(false)}
+                      onClick={() => {
+                        item.action?.()        // ✅ Call action if provided
+                        setIsNavbarOpen(false) // ✅ Close mobile nav
+                      }}
                       className="block"
                     >
                       {item.label}
