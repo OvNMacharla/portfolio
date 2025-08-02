@@ -1,99 +1,85 @@
 import React from 'react'
+import { motion } from 'framer-motion'
 import {
-  workDetails,
-  certifications,
-  appreciations,
+  workDetails
 } from '../../data/UserDetails.ts'
-import {
-  Appreciation,
-  Certification,
-  WorkDetail,
-} from '../../types/UserDetailsType.ts'
+import { WorkDetail } from '../../types/UserDetailsType.ts'
 
-import image from '../../assets/image1.jpg'
-const About = () => (
-  <div className="relative mt-[77px] md:mt-0">
-    <div className="pt-5 md:flex">
-      <div>
-        <h1 className="text-[45px] font-[500]">What I&apos;m Doing</h1>
-        <p className="text-[#808080] font-[400]">
-          Building dynamic and scalable web applications using the MERN stack
-          and Next.js, focusing on creating user-friendly interfaces, seamless
-          API integrations, and efficient server-side solutions.
+const containerVariants = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.15
+    }
+  }
+}
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 40 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } }
+}
+
+const About = () => {
+  return (
+    <motion.div
+      initial="hidden"
+      animate="show"
+      variants={containerVariants}
+      className="relative mt-[77px] md:mt-0 px-6 md:px-20 py-10 bg-background min-h-screen"
+    >
+      {/* What I'm Doing Section */}
+      <motion.div variants={itemVariants} className="mb-12 text-center">
+        <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white">
+          What I&apos;m Doing
+        </h1>
+        <p className="text-gray-400 max-w-3xl mx-auto text-lg font-light">
+          I specialize in building modern, scalable web applications using the MERN stack and Next.js. My focus is on creating seamless user experiences, powerful backend integrations, and performant architectures.
         </p>
-      </div>
-      <div className="flex flex-wrap ">
-        {workDetails.map((detail: WorkDetail) => (
-          <div key={detail.id} className="p-4  flex  m-3">
-            <span>
-              <img src={detail.emoji} className="w-10 mr-8" />
-            </span>
-            <div>
-              <p className="font-bold text-sm">{detail.title}</p>
-              <p className="text-sm text-cap-text">{detail.description}</p>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
+      </motion.div>
 
-    <div className="flex flex-col md:flex-row items-center">
-      <div>
-        <span className="text-4xl font-semibold">About Me</span>
-        <div
-          className="bg-[#eb4a4a] h-1.5 rounded-full mt-5"
-          style={{ width: '5%' }}
-        ></div>
-        <p className="pt-4 text-[#808080] font-[400]">
-          I am a passionate Full-stack Developer with expertise in the MERN
-          stack and Next.js, dedicated to building dynamic, scalable, and
-          user-friendly web applications. With a strong foundation in both
-          front-end and back-end development, I focus on creating seamless user
-          experiences, efficient API integrations, and optimizing performance.
-          Currently, I am working on innovative projects that combine my skills
-          in React, Node.js, and cloud technologies. Always eager to learn and
-          grow, I aim to contribute to impactful projects and collaborate with
-          teams to solve complex challenges in web development.
+      {/* Work Details (Emoji Cards) */}
+      <motion.div
+        variants={containerVariants}
+        className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mb-16"
+      >
+        {workDetails.map((detail: WorkDetail, index) => (
+          <motion.div
+            key={detail.id}
+            variants={itemVariants}
+            whileHover={{ scale: 1.05 }}
+            className="flex items-start p-6 bg-zinc-900 rounded-xl shadow-lg border border-zinc-800 hover:border-rose-500 transition-all duration-300"
+          >
+            <img src={detail.emoji} alt="emoji" className="w-10 h-10 mr-4" />
+            <div>
+              <h3 className="text-white font-semibold text-lg mb-1">{detail.title}</h3>
+              <p className="text-sm text-gray-400 leading-relaxed">{detail.description}</p>
+            </div>
+          </motion.div>
+        ))}
+      </motion.div>
+
+      {/* About Me Section */}
+      <motion.div
+        variants={itemVariants}
+        className="text-center max-w-4xl mx-auto mb-12"
+      >
+        <h2 className="text-4xl font-bold mb-2 text-white">About Me</h2>
+        <div className="h-1 w-20 bg-rose-500 mx-auto rounded-full mb-6" />
+        <p className="text-gray-400 text-lg leading-relaxed font-light">
+          I'm a passionate Full-Stack Developer skilled in the MERN stack and Next.js, driven by building polished and performant web applications. With experience in both frontend and backend, I love bringing ideas to life through clean UI, seamless APIs, and modern deployment pipelines. I continuously seek out innovative technologies and collaborative environments where I can grow and solve real-world problems with code.
         </p>
-      </div>
-      {/* <img src={image} className="w-[300px]" /> */}
-    </div>
+      </motion.div>
 
-    {/* <div className="pt-5">
-      <span className="text-lg font-semibold">Certifications</span>
-      <div className="flex flex-wrap ">
-        {certifications.map((detail: Certification) => (
-          <div
-            key={detail.id}
-            onClick={() => window.open(detail.link)}
-            className="p-4 md:w-[47%] w-screen flex border border-border-color rounded-lg p-2 shadow-md bg-border-background hover:border-button hover:cursor-pointer m-3"
-          >
-            <div>
-              <p className="font-bold text-sm">{detail.title}</p>
-              <p className="text-sm text-cap-text">{detail.issuer}</p>
-              <p className="text-sm text-cap-text">{detail.date}</p>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-    <div className="pt-5">
-      <span className="text-lg font-semibold">Appreciations</span>
-      <div className="flex flex-wrap ">
-        {appreciations.map((detail: Appreciation) => (
-          <div
-            key={detail.id}
-            className="p-4 md:w-[47%] flex border border-border-color rounded-lg p-2 shadow-md bg-border-background m-3"
-          >
-            <div>
-              <p className="font-bold text-sm">{detail.title}</p>
-              <p className="text-sm text-cap-text">{detail.description}</p>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div> */}
-  </div>
-)
+      {/* Optional: Add animated avatar or image here */}
+      {/* <motion.img
+        src={image}
+        alt="developer"
+        className="w-64 mx-auto rounded-xl shadow-lg"
+        variants={itemVariants}
+        whileHover={{ scale: 1.05 }}
+      /> */}
+    </motion.div>
+  )
+}
 
 export default About

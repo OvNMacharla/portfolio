@@ -1,15 +1,38 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useOutletContext } from 'react-router-dom';
-import image from '../assets/image.jpg';
 import About from './About/About.tsx';
 import Contact from './Contact/Contact.tsx';
-import { motion } from "framer-motion";
+import { motion } from 'framer-motion';
+
+import portraitImage from '../assets/profile.png';
+
+const floatVariants = {
+  animate: {
+    y: [0, -10, 0],
+    transition: {
+      duration: 6,
+      repeat: Infinity,
+      ease: 'easeInOut',
+    },
+  },
+};
+
+const iconFloat = {
+  animate: (delay: number) => ({
+    y: [0, -15, 0],
+    opacity: [0.2, 0.8, 0.2],
+    transition: {
+      duration: 10 + delay,
+      repeat: Infinity,
+      ease: 'easeInOut',
+    },
+  }),
+};
 
 const New = () => {
   const aboutRef = useRef<HTMLDivElement | null>(null);
   const contactRef = useRef<HTMLDivElement | null>(null);
 
-  // Define the expected context type
   const { setScrollToAbout } = useOutletContext<{
     setScrollToAbout: React.Dispatch<React.SetStateAction<(() => void) | null>>;
   }>();
@@ -17,89 +40,113 @@ const New = () => {
     setScrollToContact: React.Dispatch<React.SetStateAction<(() => void) | null>>;
   }>();
 
-  // Function to create animation state
-  const useScrollAnimation = () => {
-    const [isVisible, setIsVisible] = useState(false);
-    const ref = useRef(null);
-
-    useEffect(() => {
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              setIsVisible(true);
-            }
-          });
-        },
-        { threshold: 0.3 }
-      );
-
-      if (ref.current) observer.observe(ref.current);
-
-      return () => observer.disconnect();
-    }, []);
-
-    return { ref, isVisible };
-  };
-
-  const scrollToAbout = () => {
-    if (aboutRef.current) aboutRef.current.scrollIntoView({ behavior: 'smooth' });
-  };
-
-  const scrollToContact = () => {
-    if (contactRef.current) contactRef.current.scrollIntoView({ behavior: 'smooth' });
-  };
+  const scrollToAbout = () => aboutRef.current?.scrollIntoView({ behavior: 'smooth' });
+  const scrollToContact = () => contactRef.current?.scrollIntoView({ behavior: 'smooth' });
 
   useEffect(() => {
     setScrollToAbout(() => scrollToAbout);
     setScrollToContact(() => scrollToContact);
   }, [setScrollToAbout, setScrollToContact]);
 
-  // Apply animation hooks
-  const aboutAnimation = useScrollAnimation();
-  const contactAnimation = useScrollAnimation();
+  const useScrollAnimation = () => {
+    const [isVisible, setIsVisible] = React.useState(false);
+    const ref = React.useRef(null);
+
+    useEffect(() => {
+      const observer = new IntersectionObserver(
+        ([entry]) => entry.isIntersecting && setIsVisible(true),
+        { threshold: 0.3 }
+      );
+      if (ref.current) observer.observe(ref.current);
+      return () => observer.disconnect();
+    }, []);
+
+    return { ref, isVisible };
+  };
+
+  const iconMixedAnimation = {
+    animate: (delay: number) => ({
+      y: [0, -20, 0],
+      rotate: [0, 360],
+      opacity: [0.2, 0.8, 0.2],
+      transition: {
+        y: {
+          duration: 8 + delay,
+          repeat: Infinity,
+          ease: 'easeInOut',
+        },
+        rotate: {
+          duration: 12 + delay,
+          repeat: Infinity,
+          ease: 'linear',
+        },
+        opacity: {
+          duration: 6 + delay,
+          repeat: Infinity,
+          ease: 'easeInOut',
+        },
+      },
+    }),
+  };
+
+  const aboutAnim = useScrollAnimation();
+  const contactAnim = useScrollAnimation();
 
   return (
-    <>
-      {/* Static Section (No animation) */}
-      <div className="md:flex items-center">
-        <div className="">
-          <h1 className="text-[28px] font-[500]">Hey there,</h1>
-          <h1 className="text-[70px] font-[500]">I&apos;m Ome</h1>
-          <p className="text-[#eb4a4a] text-[19px] font-[500] mb-3">
-            - Full-Stack Developer | MERN & Next.js
+    <div className="bg-[#0f0f0f] relative text-[#eaeaea] px-6 md:px-16 py-16 space-y-32 overflow-hidden">
+
+      {/* Hero Section */}
+      <div className="flex flex-col md:flex-row items-center justify-between gap-12 relative z-10">
+        <div className="max-w-2xl">
+          <h1 className="text-[#eb4a4a] text-lg font-bold uppercase mb-2 tracking-widest">
+            Hey there,
+          </h1>
+          <h2 className="text-white text-5xl md:text-6xl font-extrabold mb-4 leading-tight">
+            I&apos;m Ome
+          </h2>
+          <p className="text-[#eb4a4a] text-lg font-semibold mb-4">
+            Full-Stack Developer | MERN & Next.js
           </p>
-          <p className="text-[18px] text-[#808080] font-[400]">
-            Full-stack developer skilled in MERN stack and Next.js, building dynamic, scalable, and user-friendly web applications.
+          <p className="text-[#bfbfbf] text-md leading-relaxed">
+            I build performance-optimized, visually rich, and seamless web experiences.
+            Let’s collaborate and make something extraordinary.
           </p>
         </div>
-        <img src={image} className="w-[500px]" />
+
+        {/* Floating Portrait */}
+        <motion.img
+          src={portraitImage}
+          alt="Ome Portrait"
+          className="w-[300px] md:w-[400px] rounded-lg border-[3px] border-[#eb4a4a] shadow-[0_0_25px_rgba(235,74,74,0.4)]"
+          variants={floatVariants}
+          animate="animate"
+        />
       </div>
 
-      {/* Animated About Section */}
+      {/* About Section */}
       <motion.div
-        ref={aboutAnimation.ref}
-        initial={{ opacity: 0, y: 80 }}
-        animate={{ opacity: aboutAnimation.isVisible ? 1 : 0, y: aboutAnimation.isVisible ? 0 : 80 }}
-        transition={{ duration: 1, ease: "easeOut" }}
+        ref={aboutAnim.ref}
+        initial={{ opacity: 0, y: 100 }}
+        animate={{ opacity: aboutAnim.isVisible ? 1 : 0, y: aboutAnim.isVisible ? 0 : 100 }}
+        transition={{ duration: 1.1, ease: 'easeOut' }}
       >
         <div ref={aboutRef}>
           <About />
         </div>
       </motion.div>
 
-      {/* Animated Contact Section */}
+      {/* Contact Section */}
       <motion.div
-        ref={contactAnimation.ref}
-        initial={{ opacity: 0, y: 80 }}
-        animate={{ opacity: contactAnimation.isVisible ? 1 : 0, y: contactAnimation.isVisible ? 0 : 80 }}
-        transition={{ duration: 1, ease: "easeOut" }}
+        ref={contactAnim.ref}
+        initial={{ opacity: 0, y: 100 }}
+        animate={{ opacity: contactAnim.isVisible ? 1 : 0, y: contactAnim.isVisible ? 0 : 100 }}
+        transition={{ duration: 1.1, ease: 'easeOut' }}
       >
         <div ref={contactRef}>
           <Contact />
         </div>
       </motion.div>
-    </>
+    </div>
   );
 };
 
