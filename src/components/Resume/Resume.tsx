@@ -12,25 +12,28 @@ import {
 } from '../../types/UserDetailsType.ts'
 
 const Resume = () => {
-  const [activeTab, setActiveTab] = useState<'education' | 'experience'>('education')
+  const [activeTab, setActiveTab] = useState<'education' | 'experience'>(
+    'education',
+  )
 
   const fadeInUp = {
     hidden: { opacity: 0, y: 20 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+    show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
   }
 
   return (
     <div className="min-h-screen bg-background px-6 md:px-20 pt-28 text-white">
       {/* Tabs */}
       <div className="flex justify-center space-x-6 mb-12">
-        {['education', 'experience'].map(tab => (
+        {['education', 'experience'].map((tab) => (
           <button
             key={tab}
             onClick={() => setActiveTab(tab as 'education' | 'experience')}
-            className={`px-6 py-2 text-md font-medium rounded-full transition-all duration-300 ${activeTab === tab
-              ? 'bg-yellow-400 text-black shadow-md shadow-yellow-400/40'
-              : 'bg-zinc-800 text-gray-300 hover:bg-zinc-700'
-              }`}
+            className={`px-6 py-2 text-md font-medium rounded-full transition-all duration-300 ${
+              activeTab === tab
+                ? 'bg-yellow-400 text-black shadow-md shadow-yellow-400/40'
+                : 'bg-zinc-800 text-gray-300 hover:bg-zinc-700'
+            }`}
           >
             {tab.charAt(0).toUpperCase() + tab.slice(1)}
           </button>
@@ -76,7 +79,7 @@ const Resume = () => {
                 )}
               </div>
             </motion.div>
-          )
+          ),
         )}
       </motion.div>
 

@@ -38,10 +38,7 @@ const Portfolio = () => {
       variants={container}
     >
       {/* Header */}
-      <motion.div
-        variants={fadeUp}
-        className="flex items-center gap-3 mb-12"
-      >
+      <motion.div variants={fadeUp} className="flex items-center gap-3 mb-12">
         <img src={book} alt="Projects Icon" className="w-6 h-6" />
         <h2 className="text-3xl md:text-4xl font-bold text-white">Projects</h2>
       </motion.div>

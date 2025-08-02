@@ -35,7 +35,9 @@ const MapComponent = () => {
         />
         <Marker position={center}>
           <Popup>
-            <span className="font-semibold text-sm">Ome's Current Location</span>
+            <span className="font-semibold text-sm">
+              Ome&apos;s Current Location
+            </span>
           </Popup>
         </Marker>
       </MapContainer>

@@ -1,10 +1,10 @@
-import React, { useEffect, useRef } from 'react';
-import { useOutletContext } from 'react-router-dom';
-import About from './About/About.tsx';
-import Contact from './Contact/Contact.tsx';
-import { motion } from 'framer-motion';
+import React, { useEffect, useRef } from 'react'
+import { useOutletContext } from 'react-router-dom'
+import About from './About/About.tsx'
+import Contact from './Contact/Contact.tsx'
+import { motion } from 'framer-motion'
 
-import portraitImage from '../assets/profile.png';
+import portraitImage from '../assets/profile.png'
 
 const floatVariants = {
   animate: {
@@ -15,7 +15,7 @@ const floatVariants = {
       ease: 'easeInOut',
     },
   },
-};
+}
 
 const iconFloat = {
   animate: (delay: number) => ({
@@ -27,42 +27,46 @@ const iconFloat = {
       ease: 'easeInOut',
     },
   }),
-};
+}
 
 const New = () => {
-  const aboutRef = useRef<HTMLDivElement | null>(null);
-  const contactRef = useRef<HTMLDivElement | null>(null);
+  const aboutRef = useRef<HTMLDivElement | null>(null)
+  const contactRef = useRef<HTMLDivElement | null>(null)
 
   const { setScrollToAbout } = useOutletContext<{
-    setScrollToAbout: React.Dispatch<React.SetStateAction<(() => void) | null>>;
-  }>();
+    setScrollToAbout: React.Dispatch<React.SetStateAction<(() => void) | null>>
+  }>()
   const { setScrollToContact } = useOutletContext<{
-    setScrollToContact: React.Dispatch<React.SetStateAction<(() => void) | null>>;
-  }>();
+    setScrollToContact: React.Dispatch<
+      React.SetStateAction<(() => void) | null>
+    >
+  }>()
 
-  const scrollToAbout = () => aboutRef.current?.scrollIntoView({ behavior: 'smooth' });
-  const scrollToContact = () => contactRef.current?.scrollIntoView({ behavior: 'smooth' });
+  const scrollToAbout = () =>
+    aboutRef.current?.scrollIntoView({ behavior: 'smooth' })
+  const scrollToContact = () =>
+    contactRef.current?.scrollIntoView({ behavior: 'smooth' })
 
   useEffect(() => {
-    setScrollToAbout(() => scrollToAbout);
-    setScrollToContact(() => scrollToContact);
-  }, [setScrollToAbout, setScrollToContact]);
+    setScrollToAbout(() => scrollToAbout)
+    setScrollToContact(() => scrollToContact)
+  }, [setScrollToAbout, setScrollToContact])
 
   const useScrollAnimation = () => {
-    const [isVisible, setIsVisible] = React.useState(false);
-    const ref = React.useRef(null);
+    const [isVisible, setIsVisible] = React.useState(false)
+    const ref = React.useRef(null)
 
     useEffect(() => {
       const observer = new IntersectionObserver(
         ([entry]) => entry.isIntersecting && setIsVisible(true),
-        { threshold: 0.3 }
-      );
-      if (ref.current) observer.observe(ref.current);
-      return () => observer.disconnect();
-    }, []);
+        { threshold: 0.3 },
+      )
+      if (ref.current) observer.observe(ref.current)
+      return () => observer.disconnect()
+    }, [])
 
-    return { ref, isVisible };
-  };
+    return { ref, isVisible }
+  }
 
   const iconMixedAnimation = {
     animate: (delay: number) => ({
@@ -87,14 +91,13 @@ const New = () => {
         },
       },
     }),
-  };
+  }
 
-  const aboutAnim = useScrollAnimation();
-  const contactAnim = useScrollAnimation();
+  const aboutAnim = useScrollAnimation()
+  const contactAnim = useScrollAnimation()
 
   return (
     <div className="bg-[#0f0f0f] relative text-[#eaeaea] px-6 md:px-16 py-16 space-y-32 overflow-hidden">
-
       {/* Hero Section */}
       <div className="flex flex-col md:flex-row items-center justify-between gap-12 relative z-10">
         <div className="max-w-2xl">
@@ -108,8 +111,8 @@ const New = () => {
             Full-Stack Developer | MERN & Next.js
           </p>
           <p className="text-[#bfbfbf] text-md leading-relaxed">
-            I build performance-optimized, visually rich, and seamless web experiences.
-            Let’s collaborate and make something extraordinary.
+            I build performance-optimized, visually rich, and seamless web
+            experiences. Let’s collaborate and make something extraordinary.
           </p>
         </div>
 
@@ -127,7 +130,10 @@ const New = () => {
       <motion.div
         ref={aboutAnim.ref}
         initial={{ opacity: 0, y: 100 }}
-        animate={{ opacity: aboutAnim.isVisible ? 1 : 0, y: aboutAnim.isVisible ? 0 : 100 }}
+        animate={{
+          opacity: aboutAnim.isVisible ? 1 : 0,
+          y: aboutAnim.isVisible ? 0 : 100,
+        }}
         transition={{ duration: 1.1, ease: 'easeOut' }}
       >
         <div ref={aboutRef}>
@@ -139,7 +145,10 @@ const New = () => {
       <motion.div
         ref={contactAnim.ref}
         initial={{ opacity: 0, y: 100 }}
-        animate={{ opacity: contactAnim.isVisible ? 1 : 0, y: contactAnim.isVisible ? 0 : 100 }}
+        animate={{
+          opacity: contactAnim.isVisible ? 1 : 0,
+          y: contactAnim.isVisible ? 0 : 100,
+        }}
         transition={{ duration: 1.1, ease: 'easeOut' }}
       >
         <div ref={contactRef}>
@@ -147,7 +156,7 @@ const New = () => {
         </div>
       </motion.div>
     </div>
-  );
-};
+  )
+}
 
-export default New;
+export default New

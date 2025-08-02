@@ -9,24 +9,29 @@ interface HeaderProps {
   onScrollToContact: () => void
 }
 
-const Header: React.FC<HeaderProps> = ({ onScrollToAbout, onScrollToContact }) => {
-  const [isHovered, setIsHovered] = useState(false);
-  const [isNavbarOpen, setIsNavbarOpen] = useState(false);
-  const navbarRef = useRef(null);
+const Header: React.FC<HeaderProps> = ({
+  onScrollToAbout,
+  onScrollToContact,
+}) => {
+  const [isHovered, setIsHovered] = useState(false)
+  const [isNavbarOpen, setIsNavbarOpen] = useState(false)
+  const navbarRef = useRef(null)
 
   const handleClickOutside = (event: MouseEvent) => {
-    if (navbarRef.current && !(navbarRef.current as any).contains(event.target)) {
+    if (
+      navbarRef.current &&
+      !(navbarRef.current as any).contains(event.target)
+    ) {
       setIsNavbarOpen(false)
     }
   }
-
 
   const navItems = [
     { label: 'About', action: onScrollToAbout },
     { label: 'Projects', to: '/projects' },
     { label: 'Contact', action: onScrollToContact },
     { label: 'Resume', download: true },
-  ];
+  ]
   useEffect(() => {
     document.addEventListener('mousedown', handleClickOutside)
     return () => document.removeEventListener('mousedown', handleClickOutside)
@@ -57,14 +62,14 @@ const Header: React.FC<HeaderProps> = ({ onScrollToAbout, onScrollToContact }) =
       opacity: 1,
       scale: 1,
       y: 0,
-      transition: { duration: 0.3, delay: i * 0.1, ease: 'easeOut' }
+      transition: { duration: 0.3, delay: i * 0.1, ease: 'easeOut' },
     }),
     exit: (i: number) => ({
       opacity: 0,
       scale: 0.8,
       y: 10,
-      transition: { duration: 0.2, delay: i * 0.05, ease: 'easeIn' }
-    })
+      transition: { duration: 0.2, delay: i * 0.05, ease: 'easeIn' },
+    }),
   }
 
   const logoVariants = {
@@ -72,8 +77,8 @@ const Header: React.FC<HeaderProps> = ({ onScrollToAbout, onScrollToContact }) =
     hovered: {
       scale: 1.1,
       letterSpacing: '0.2em',
-      transition: { duration: 0.3, ease: 'easeOut' }
-    }
+      transition: { duration: 0.3, ease: 'easeOut' },
+    },
   }
 
   return (
@@ -105,7 +110,10 @@ const Header: React.FC<HeaderProps> = ({ onScrollToAbout, onScrollToContact }) =
                 {item.to ? (
                   <Link to={item.to}>{item.label}</Link>
                 ) : item.download ? (
-                  <button onClick={handleResumeDownload} className="flex items-center gap-1">
+                  <button
+                    onClick={handleResumeDownload}
+                    className="flex items-center gap-1"
+                  >
                     {item.label} <FiDownload />
                   </button>
                 ) : (
@@ -117,11 +125,21 @@ const Header: React.FC<HeaderProps> = ({ onScrollToAbout, onScrollToContact }) =
 
           {/* Mobile Menu Button */}
           <button
-            onClick={() => setIsNavbarOpen(prev => !prev)}
+            onClick={() => setIsNavbarOpen((prev) => !prev)}
             className="md:hidden text-white focus:outline-none"
           >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
             </svg>
           </button>
         </div>
@@ -150,8 +168,8 @@ const Header: React.FC<HeaderProps> = ({ onScrollToAbout, onScrollToContact }) =
                   ) : item.download ? (
                     <button
                       onClick={() => {
-                        handleResumeDownload();
-                        setIsNavbarOpen(false);
+                        handleResumeDownload()
+                        setIsNavbarOpen(false)
                       }}
                       className="flex items-center gap-1"
                     >
@@ -160,8 +178,8 @@ const Header: React.FC<HeaderProps> = ({ onScrollToAbout, onScrollToContact }) =
                   ) : (
                     <button
                       onClick={() => {
-                        item.action && item.action();
-                        setIsNavbarOpen(false);
+                        item.action && item.action()
+                        setIsNavbarOpen(false)
                       }}
                     >
                       {item.label}
@@ -188,23 +206,31 @@ const Header: React.FC<HeaderProps> = ({ onScrollToAbout, onScrollToContact }) =
               {/* Left Buttons */}
               <div className="flex items-center mr-4">
                 <AnimatePresence>
-                  {isHovered && leftButtons.map((btn, index) => (
-                    <motion.div
-                      key={btn.name}
-                      custom={index}
-                      variants={buttonVariants}
-                      initial="hidden"
-                      animate="visible"
-                      exit="exit"
-                      className="px-3 py-2 mx-1 text-sm font-medium"
-                    >
-                      {btn.to ? (
-                        <Link to={btn.to} className="hover:underline">{btn.name}</Link>
-                      ) : (
-                        <button onClick={btn.onClick} className="hover:underline">{btn.name}</button>
-                      )}
-                    </motion.div>
-                  ))}
+                  {isHovered &&
+                    leftButtons.map((btn, index) => (
+                      <motion.div
+                        key={btn.name}
+                        custom={index}
+                        variants={buttonVariants}
+                        initial="hidden"
+                        animate="visible"
+                        exit="exit"
+                        className="px-3 py-2 mx-1 text-sm font-medium"
+                      >
+                        {btn.to ? (
+                          <Link to={btn.to} className="hover:underline">
+                            {btn.name}
+                          </Link>
+                        ) : (
+                          <button
+                            onClick={btn.onClick}
+                            className="hover:underline"
+                          >
+                            {btn.name}
+                          </button>
+                        )}
+                      </motion.div>
+                    ))}
                 </AnimatePresence>
               </div>
 
@@ -216,30 +242,34 @@ const Header: React.FC<HeaderProps> = ({ onScrollToAbout, onScrollToContact }) =
               {/* Right Buttons */}
               <div className="flex items-center ml-4">
                 <AnimatePresence>
-                  {isHovered && rightButtons.map((btn, index) => (
-                    <motion.div
-                      key={btn.name}
-                      custom={index + leftButtons.length}
-                      variants={buttonVariants}
-                      initial="hidden"
-                      animate="visible"
-                      exit="exit"
-                      className="px-3 py-2 mx-1 text-sm font-medium"
-                    >
-                      {btn.download ? (
-                        <button
-                          onClick={handleResumeDownload}
-                          className="hover:underline flex items-center gap-1"
-                        >
-                          {btn.name} <FiDownload />
-                        </button>
-                      ) : (
-                        <button onClick={btn.onClick} className="hover:underline">
-                          {btn.name}
-                        </button>
-                      )}
-                    </motion.div>
-                  ))}
+                  {isHovered &&
+                    rightButtons.map((btn, index) => (
+                      <motion.div
+                        key={btn.name}
+                        custom={index + leftButtons.length}
+                        variants={buttonVariants}
+                        initial="hidden"
+                        animate="visible"
+                        exit="exit"
+                        className="px-3 py-2 mx-1 text-sm font-medium"
+                      >
+                        {btn.download ? (
+                          <button
+                            onClick={handleResumeDownload}
+                            className="hover:underline flex items-center gap-1"
+                          >
+                            {btn.name} <FiDownload />
+                          </button>
+                        ) : (
+                          <button
+                            onClick={btn.onClick}
+                            className="hover:underline"
+                          >
+                            {btn.name}
+                          </button>
+                        )}
+                      </motion.div>
+                    ))}
                 </AnimatePresence>
               </div>
             </motion.div>

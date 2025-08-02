@@ -1,22 +1,20 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import {
-  workDetails
-} from '../../data/UserDetails.ts'
+import { workDetails } from '../../data/UserDetails.ts'
 import { WorkDetail } from '../../types/UserDetailsType.ts'
 
 const containerVariants = {
   hidden: {},
   show: {
     transition: {
-      staggerChildren: 0.15
-    }
-  }
+      staggerChildren: 0.15,
+    },
+  },
 }
 
 const itemVariants = {
   hidden: { opacity: 0, y: 40 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } }
+  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
 }
 
 const About = () => {
@@ -33,7 +31,10 @@ const About = () => {
           What I&apos;m Doing
         </h1>
         <p className="text-gray-400 max-w-3xl mx-auto text-lg font-light">
-          I specialize in building modern, scalable web applications using the MERN stack and Next.js. My focus is on creating seamless user experiences, powerful backend integrations, and performant architectures.
+          I specialize in building modern, scalable web applications using the
+          MERN stack and Next.js. My focus is on creating seamless user
+          experiences, powerful backend integrations, and performant
+          architectures.
         </p>
       </motion.div>
 
@@ -51,8 +52,12 @@ const About = () => {
           >
             <img src={detail.emoji} alt="emoji" className="w-10 h-10 mr-4" />
             <div>
-              <h3 className="text-white font-semibold text-lg mb-1">{detail.title}</h3>
-              <p className="text-sm text-gray-400 leading-relaxed">{detail.description}</p>
+              <h3 className="text-white font-semibold text-lg mb-1">
+                {detail.title}
+              </h3>
+              <p className="text-sm text-gray-400 leading-relaxed">
+                {detail.description}
+              </p>
             </div>
           </motion.div>
         ))}
@@ -66,7 +71,12 @@ const About = () => {
         <h2 className="text-4xl font-bold mb-2 text-white">About Me</h2>
         <div className="h-1 w-20 bg-rose-500 mx-auto rounded-full mb-6" />
         <p className="text-gray-400 text-lg leading-relaxed font-light">
-          I'm a passionate Full-Stack Developer skilled in the MERN stack and Next.js, driven by building polished and performant web applications. With experience in both frontend and backend, I love bringing ideas to life through clean UI, seamless APIs, and modern deployment pipelines. I continuously seek out innovative technologies and collaborative environments where I can grow and solve real-world problems with code.
+          I&apos;m a passionate Full-Stack Developer skilled in the MERN stack and
+          Next.js, driven by building polished and performant web applications.
+          With experience in both frontend and backend, I love bringing ideas to
+          life through clean UI, seamless APIs, and modern deployment pipelines.
+          I continuously seek out innovative technologies and collaborative
+          environments where I can grow and solve real-world problems with code.
         </p>
       </motion.div>
 

@@ -68,7 +68,11 @@ const Contact = () => {
           onSubmit={handleSubmit}
           variants={{
             hidden: { opacity: 0, y: 30 },
-            show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
+            show: {
+              opacity: 1,
+              y: 0,
+              transition: { duration: 0.6, ease: 'easeOut' },
+            },
           }}
           className="flex flex-col gap-5"
         >
@@ -113,12 +117,21 @@ const Contact = () => {
         <motion.div
           variants={{
             hidden: { opacity: 0, y: 30 },
-            show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
+            show: {
+              opacity: 1,
+              y: 0,
+              transition: { duration: 0.6, ease: 'easeOut' },
+            },
           }}
         >
-          <h3 className="text-2xl font-semibold text-white mb-3">Get in Touch</h3>
+          <h3 className="text-2xl font-semibold text-white mb-3">
+            Get in Touch
+          </h3>
           <p className="text-sm text-gray-400">
-            I'm eager to connect with professionals and explore new opportunities. If you know of any positions or projects that match my skills, or if you’re open to collaboration or idea exchange, please reach out. Your support is greatly appreciated!
+            I&apos;m eager to connect with professionals and explore new
+            opportunities. If you know of any positions or projects that match
+            my skills, or if you’re open to collaboration or idea exchange,
+            please reach out. Your support is greatly appreciated!
           </p>
         </motion.div>
       </motion.div>

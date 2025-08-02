@@ -105,9 +105,10 @@ export const experienceDetails: ExperienceDetail[] = [
       '•	Developed 15+ reusable React components for enterprise applications, improving UI consistency and reducing development time by 20%.',
       '•	Integrated 12+ REST APIs for real-time data fetching, enhancing user experience and reducing latency by 30%.',
       '•	Collaborated with cross-functional teams to optimize API payloads, reducing data transfer size by 45% using gzip compression.',
-      '•	Conducted cross-browser testing and resolved 20+ UI/UX issues, achieving a 95% client satisfaction rate.'
+      '•	Conducted cross-browser testing and resolved 20+ UI/UX issues, achieving a 95% client satisfaction rate.',
     ],
-  }, {
+  },
+  {
     id: '2',
     title: 'Software Development Engineer Intern',
     company: 'Kasspro Enterprises',
@@ -207,7 +208,7 @@ export const skillsDetails: SkillsDetail[] = [
     skill: 'AGILE METHODOLOGY',
     percentage: '85%',
   },
-];
+]
 
 export const projects: Project[] = [
   {
