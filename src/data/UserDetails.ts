@@ -56,12 +56,6 @@ export const workDetails: WorkDetail[] = [
     emoji: web,
   },
   {
-    id: '2',
-    title: 'Script Writing',
-    description: 'Created engaging scripts for digital platforms and media.',
-    emoji: book,
-  },
-  {
     id: '3',
     title: 'Mobile Development',
     description:
